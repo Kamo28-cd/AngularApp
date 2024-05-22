@@ -5,7 +5,7 @@ import { FootballComponent } from './football/football.component';
 
 export const routes: Routes = [
   {
-    path: 'football',
+    path: '',
     component: FootballComponent,
     title: 'Football Component',
   },
