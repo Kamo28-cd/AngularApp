@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="card" *ngIf="!isLoading">
+    <div class="loader-container">
+      <app-loader></app-loader>
+    </div>
+    <section>
+      <div>
+        <h3>{{ currentPrice?.chartName }}</h3>
+      </div>
+    </section>
+    <section class="currency-row">
+      <div class="currency-column">
+        {{ currentPrice?.bpi?.GBP?.description }} ({{
+          currentPrice?.bpi?.GBP?.code
+        }})
+        <p>
+          <span class="currency">
+            {{
+              currentPrice?.bpi?.GBP?.rate_float
+                | currency : currentPrice?.bpi?.GBP?.code
+            }}</span
+          >
+        </p>
+      </div>
+
+      <div class="currency-column">
+        {{ currentPrice?.bpi?.EUR?.description }} ({{
+          currentPrice?.bpi?.EUR?.code
+        }})
+        <p>
+          <span class="currency">
+            {{
+              currentPrice?.bpi?.EUR?.rate_float
+                | currency : currentPrice?.bpi?.EUR?.code
+            }}</span
+          >
+        </p>
+      </div>
+
+      <div class="currency-column">
+        {{ currentPrice?.bpi?.USD?.description }} ({{
+          currentPrice?.bpi?.USD?.code
+        }})
+        <p>
+          <span class="currency">
+            {{
+              currentPrice?.bpi?.USD?.rate_float
+                | currency : currentPrice?.bpi?.USD?.code
+            }}</span
+          >
+        </p>
+      </div>
+    </section>
+    <section>
+      <div>{{ currentPrice?.time?.updated }}</div>
+      <p>{{ currentPrice?.disclaimer }}</p>
+    </section>
+  </div>
+</div>

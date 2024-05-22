@@ -1,0 +1,28 @@
+<div class="button-container">
+  <button class="button button-start" (click)="startTimer()">Start</button>
+  <div class="info-container">
+    <div class="team-score">Time: {{ timer$ | async }}</div>
+    <div class="subheading" *ngIf="isHalfTime">Half-Time</div>
+    <div class="subheading" *ngIf="isFullTime">Full-Time</div>
+  </div>
+
+  <button class="button button-stop" (click)="stopTimer()">Stop</button>
+</div>
+
+<div class="content">
+  <div class="score-card" *ngFor="let fixture of fixtures">
+    <div class="team">
+      <img src="{{ fixture.homeTeamImg }}" alt="" />
+      <span class="team-name">{{ fixture.homeTeamAbbr }}</span>
+      <span class="team-score">{{ fixture.homeTeamScore }}</span>
+    </div>
+
+    <div class="vs">VS</div>
+
+    <div class="team">
+      <img src="{{ fixture.awayTeamImg }}" alt="" />
+      <span class="team-name">{{ fixture.awayTeamAbbr }}</span>
+      <span class="team-score">{{ fixture.awayTeamScore }}</span>
+    </div>
+  </div>
+</div>

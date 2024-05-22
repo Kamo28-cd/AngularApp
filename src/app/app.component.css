@@ -1,0 +1,15 @@
+.navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navigation .navigation-item {
+  flex: 1;
+  padding: 15px;
+}
+
+.content {
+  padding: 20px;
+}
